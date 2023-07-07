@@ -1,0 +1,9 @@
+Document: opensubdiv
+Title: OpenSubdiv documentation
+Author: Pixar Animation Studios
+Abstract: Documentation about library and tools
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/opensubdiv/doxy_html/index.html
+Files: /usr/share/doc/opensubdiv/doxy_html/*.html

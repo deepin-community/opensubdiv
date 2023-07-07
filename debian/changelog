@@ -1,5 +1,98 @@
-template-repository (1.0-1) unstable; urgency=medium
+opensubdiv (3.5.0-2) unstable; urgency=medium
 
-  * Initial release
+  * Upload to unstable
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 11 Dec 2022 10:52:28 +0100
+
+opensubdiv (3.5.0-1) experimental; urgency=medium
+
+  * debian/: SONAME bump 3.4.4 -> 3.5.0
+  * debian/patches/: patchset updated
+    - 0001-Use_system_jquery.patch added
+  * debian/control:
+    - move libtbb-dev to Build-Conflicts (Closes: #1011660)
+      Thanks to Adrian Bunk <bunk> for the hint.
+    - S-V bump 4.5.1 -> 4.6.1 (no changes needed)
+    - libjs-jquery b-dep added
+  * debian/copyright:
+    - new entries and timestamps
+    - extend timestamps for debian/
+  * debian/libosd-dev.install: install new cmake files
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Thu, 08 Dec 2022 23:10:50 +0100
+
+opensubdiv (3.4.4-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 18 Aug 2021 23:01:34 +0200
+
+opensubdiv (3.4.4-1) experimental; urgency=medium
+
+  * New upstream release
+    - debian/: SONAME bump 3.4.3 -> 3.4.4
+  * debian/control: S-V bump 4.5.0 -> 4.5.1 (no changes needed)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 05 May 2021 23:11:22 +0200
+
+opensubdiv (3.4.3-3) unstable; urgency=medium
+
+  * debian/control: debhelper bump 12 -> 13
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 12 May 2020 20:14:00 +0200
+
+opensubdiv (3.4.3-2) unstable; urgency=medium
+
+  * debian/: fix breakage due to SONAME bump (Closes: #959118)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 29 Apr 2020 22:55:54 +0200
+
+opensubdiv (3.4.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: S-V bump 4.4.1 -> 4.5.0 (no changes needed)
+  * debian/copyright: drop now-unused entries
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 28 Apr 2020 23:43:47 +0200
+
+opensubdiv (3.4.0-6) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 14 Jan 2020 01:02:39 +0100
+
+opensubdiv (3.4.0-5) experimental; urgency=medium
+
+  * debian/:
+    + -dev and -doc packages renaming
+    + opensubdiv-tools binary package added
+  * debian/rules: drop examples/tutorials and static libs
+  * debian/libosd-doc.doc-base: new file added
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Thu, 09 Jan 2020 20:54:08 +0100
+
+opensubdiv (3.4.0-4) experimental; urgency=medium
+
+  * debian/: split CPU/GPU libraries
+    into independent packages
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 08 Jan 2020 08:58:30 +0100
+
+opensubdiv (3.4.0-3) experimental; urgency=medium
+
+  * debian/rules: enable OpenGL support but w/o tests
+  * debian/control: libxxf86vm-dev b-dep added
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 30 Dec 2019 23:39:53 +0100
+
+opensubdiv (3.4.0-2) experimental; urgency=medium
+
+  * debian/copyright: add DreamWorks files entry
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 30 Dec 2019 22:13:10 +0100
+
+opensubdiv (3.4.0-1) experimental; urgency=low
+
+  * Initial release (Closes: #934148)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 14 Oct 2019 14:10:27 +0200

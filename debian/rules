@@ -1,4 +1,29 @@
 #!/usr/bin/make -f
 
+export DH_OPTIONS
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+INSTDIR = debian/tmp
+
 %:
-	dh $@
+	dh $@ --buildsystem=cmake \
+		--builddirectory=build
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_LIBDIR_BASE=lib/$(DEB_HOST_MULTIARCH) \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DNO_CLEW=ON \
+		-DNO_CUDA=ON \
+		-DNO_EXAMPLES=ON \
+		-DNO_GLTESTS=ON \
+		-DNO_OPENCL=ON \
+		-DNO_TUTORIALS=ON
+
+override_dh_auto_install:
+	dh_auto_install \
+		--buildsystem=cmake \
+		--destdir=$(INSTDIR)
+	rm -f $(INSTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/*.a
